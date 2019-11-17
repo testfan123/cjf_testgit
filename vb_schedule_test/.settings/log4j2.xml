@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <!--添加一个控制台追加器-->
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>[%-5p] %d %c - %m%n</pattern>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+    
+     <RollingFile name="RollingFileInfo" fileName="${filedir}/info.log"
+                     filePattern="${filedir}/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log.gz">
+              <!-- 过滤规则-->
+            <Filters>
+                <ThresholdFilter level="Debug"/>
+                <!-- 更高级别的忽略 -->
+<!--                 <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/> -->
+            </Filters>
+            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+              <!-- 日志策略-->
+            <Policies>
+             <!-- 每天生成一个日志文件 --> 
+             <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            <!-- 限制单个文件大小 -->  
+             <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+             <!-- 最大保存文件数 -->  
+            <DefaultRolloverStrategy max="60" /> 
+        </RollingFile>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+            <appender-ref ref="RollingFileInfo"/>
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: vb_schedule_test
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: chenjinfeng
+Implementation-Vendor-Id: com.vb
+Build-Jdk: 1.8.0_201
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/vb_parent/vb_schedule_test
+Created-By: Maven Integration for Eclipse
+

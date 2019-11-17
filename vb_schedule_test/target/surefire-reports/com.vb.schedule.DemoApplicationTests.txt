@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.vb.schedule.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.938 s <<< FAILURE! - in com.vb.schedule.DemoApplicationTests
+contextLoads(com.vb.schedule.DemoApplicationTests)  Time elapsed: 5.267 s  <<< ERROR!
+java.lang.RuntimeException: com.netflix.client.ClientException: Load balancer does not have available server for client: schedule-service
+	at com.vb.schedule.DemoApplicationTests.contextLoads(DemoApplicationTests.java:24)
+Caused by: com.netflix.client.ClientException: Load balancer does not have available server for client: schedule-service
+	at com.vb.schedule.DemoApplicationTests.contextLoads(DemoApplicationTests.java:24)
+
